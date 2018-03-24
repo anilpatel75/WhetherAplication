@@ -1,0 +1,36 @@
+
+    <div class="row" *ngIf="fiveData[0] !==undefined">
+        <div class="col-md-3"   
+        *ngFor="let item of fiveData">
+      
+        <div class="main">
+              
+                    <a routerLinkOption="active">
+                          <h2>{{item.time * 1000 | date: 'MMM d' }}</h2>
+                          <h2>High:{{item.apparentTemperatureHigh}}</h2>
+                           <h2>Min:{{item.temperatureMin}}</h2>
+                           <!-- <i  style="text-align:center"[class]="weatherIcon(item.icon)"></i> -->
+                           <hr>
+                                <div class="uv">
+                                       <div class="uvIndex1">uvIndex:</div>
+                                      <div class="uvIndex2">{{item.uvIndex}}</div>
+                                 </div>
+
+                                <div class="speed">
+                                      <div class="speed1">speed:</div>
+                                      <div class="speed2">{{item.windSpeed}}</div>
+                               </div> 
+                            
+                                <div class="visibility">
+                                      <div class="visibility1">visibility:</div>
+                                      <div class="visibility2">{{item.visibility}}</div>
+                                 </div> 
+
+                           
+                    </a>
+        </div>
+                    
+        </div>
+    
+             
+        </div>

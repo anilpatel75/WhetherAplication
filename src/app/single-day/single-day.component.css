@@ -1,0 +1,101 @@
+.main
+{
+    width:416px;
+    height:375px;
+    margin:50px 0 0 0;
+    background-color: #f8f9fa;;
+    color: #828283;
+    box-shadow: 10px 10px 5px #b5a8a840;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius:5px;
+}
+
+
+h2{
+    margin-left:12px;
+ padding-top:30px;
+}
+p{
+    font-size:20px;
+display: inline-block;
+}
+
+
+.uvIndex1
+{
+    float:left;
+   
+    margin-left: 10px;
+    font-size: 20px;
+
+}
+.uvIndex2
+{
+  float:right;
+ 
+  margin-right: 20px;
+  font-size: 20px;
+}
+.speed1
+{
+    float:left;
+    
+   margin-top: 25px;
+    margin-left: -73px;
+    font-size: 20px;
+
+}
+.speed2
+{
+  float:right;
+
+  margin-top: 25px;
+  margin-right: -23px;
+  font-size: 20px;
+}
+.visibility1
+{
+    float:left;
+    margin-top: 50px;
+    margin-left: -73px;
+    font-size: 20px;
+
+}
+.visibility2
+{
+  float:right;
+ margin-top: 50px;
+  margin-right: -23px;
+  font-size: 20px;
+}
+
+.visibility3
+{
+    float:left;
+    margin-top: 75px;
+    margin-left: -83px;
+    font-size: 20px;
+
+}
+.visibility4
+{
+  float:right;
+ margin-top: 75px;
+  margin-right: -42px;
+  font-size: 20px;
+}
+.visibility5
+{
+    float:left;
+    margin-top: 100px;
+    margin-left: -112px;
+    font-size: 20px;
+
+}
+.visibility6
+{
+  float:right;
+ margin-top: 100px;
+  margin-right: -42px;
+  font-size: 20px;
+}

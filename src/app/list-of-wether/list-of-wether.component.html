@@ -1,0 +1,60 @@
+<!-- <div class="container" >
+   
+  <div class="div1" [style.background-image]="'url(' + image3 + ')'" > 
+     
+        <a>
+              <div class="time"><h3>{{hiii.time * 1000 | date: 'MMM d'  }}</h3></div> 
+              <div class="tempHigh"><h2>{{hiii.apparentTemperatureHigh}}</h2><span>High</span></div> 
+              <div><h2>{{hiii.temperatureMin}}</h2><span>Min</span></div>
+              <div>{{hiii.icon}}
+              
+                  <i id ="myi"[class]="weatherIcon(hiii.icon)"></i>
+              
+             </div>
+       </a>
+       
+        <div><img src="assets/right.jpg"  class ="button1" (click)="onClickRight()"></div>
+        <div><img src="assets/left.jpg"  class ="button2" (click)="onClickLeft()"></div>
+        <div class="div2">
+        <img class="im2" *ngFor="let image of slider" [src]="image">
+        </div>
+      </div>
+</div> -->
+
+            <div class="row">
+                  <div class="col-md-3"   
+                  *ngFor="let item of dailyData; let i = index">
+                  <div class="main" routerLinkOption="active" [routerLink] = "['/list',i]">
+                        
+                              <a  >
+                                    <h2>{{item.time * 1000 | date: 'MMM d' }}</h2>
+                                    <h2>High:{{item.apparentTemperatureHigh}}</h2>
+                                     <h2>Min:{{item.temperatureMin}}</h2>
+                                     <!-- <i  style="text-align:center"[class]="weatherIcon(item.icon)"></i> -->
+                                     <hr>
+                                          <div class="uv">
+                                                 <div class="uvIndex1">uvIndex:</div>
+                                                <div class="uvIndex2">{{item.uvIndex}}</div>
+                                           </div>
+
+                                          <div class="speed">
+                                                <div class="speed1">speed:</div>
+                                                <div class="speed2">{{item.windSpeed}}</div>
+                                         </div> 
+                                      
+                                          <div class="visibility">
+                                                <div class="visibility1">visibility:</div>
+                                                <div class="visibility2">{{item.visibility}}</div>
+                                           </div> 
+
+                                     
+                              </a>
+                  </div>
+                              
+                  </div>
+              
+                       
+                  </div>
+                 
+
+

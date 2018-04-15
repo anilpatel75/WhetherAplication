@@ -1,32 +1,19 @@
-<!-- <div class="container" >
-   
-  <div class="div1" [style.background-image]="'url(' + image3 + ')'" > 
-     
-        <a>
-              <div class="time"><h3>{{hiii.time * 1000 | date: 'MMM d'  }}</h3></div> 
-              <div class="tempHigh"><h2>{{hiii.apparentTemperatureHigh}}</h2><span>High</span></div> 
-              <div><h2>{{hiii.temperatureMin}}</h2><span>Min</span></div>
-              <div>{{hiii.icon}}
-              
-                  <i id ="myi"[class]="weatherIcon(hiii.icon)"></i>
-              
-             </div>
-       </a>
-       
-        <div><img src="assets/right.jpg"  class ="button1" (click)="onClickRight()"></div>
-        <div><img src="assets/left.jpg"  class ="button2" (click)="onClickLeft()"></div>
-        <div class="div2">
-        <img class="im2" *ngFor="let image of slider" [src]="image">
-        </div>
-      </div>
-</div> -->
+
 
             <div class="row">
                   <div class="col-md-3"   
                   *ngFor="let item of dailyData; let i = index">
-                  <div class="main" routerLinkOption="active" [routerLink] = "['/list',i]">
+                 
+                  <div class="main"
+                  [routerLink] = "['/list',i]"
+                  [@heroState]= "state"
+                  
+                  (mouseenter)="onMouseOver(i)" 
+                  (mouseleave)="onMouseleave(i)"
+                  [@anilAnimation]= "state"
+                  >
                         
-                              <a  >
+                              <a >
                                     <h2>{{item.time * 1000 | date: 'MMM d' }}</h2>
                                     <h2>High:{{item.apparentTemperatureHigh}}</h2>
                                      <h2>Min:{{item.temperatureMin}}</h2>

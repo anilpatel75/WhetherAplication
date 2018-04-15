@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Component } from '@angular/core';
 import { Server } from './share/server.component';
+import { trigger,state, style, transition,animate } from '@angular/animations';
 
 
 
@@ -11,10 +12,22 @@ import { Server } from './share/server.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('heroState', [
+      state('inactive', style({transform: 'translateX(0) scale(1)'})),
+    state('active',   style({transform: 'translateX(0) scale(1.02)'})),
+    transition('inactive => active', animate('100ms ease-in')),
+    transition('active => inactive', animate('100ms ease-out')),
+    //  transition('active <=> inactive',
+    //   [animate('500ms ease-out',
+    //   style({transform:'scale(1.0)'}))]
+    // )
+    ]
+)]
 })
 export class AppComponent  {
-
+ state:string = 'inactive';
   lat;
   long;
   constructor(private server:Server, private router:Router) { }
@@ -47,6 +60,16 @@ export class AppComponent  {
           
 
            }
+           onMouseOver(index)
+           {
+             this.state === 'active' ? this.state ='inactive' :this.state = 'active';
+            
+           }
+           onMouseleave(index)
+           {
+             this.state === 'inactive' ? this.state ='active' : this.state = 'inactive';
+             
+           } 
           
 
 

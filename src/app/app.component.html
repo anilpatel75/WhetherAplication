@@ -2,8 +2,10 @@
    <div class="container">
      
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">WhetherApp</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" [@heroState]= "state"
+    (mouseenter)="onMouseOver(i)" 
+    (mouseleave)="onMouseleave(i)">
+      <a class="navbar-brand" routerLink="/list" >WhetherApp</a>
       <button class="navbar-toggler" type="button" 
       data-toggle="collapse" data-target="#navbarNav" 
       aria-controls="navbarNav" aria-expanded="false" 
@@ -22,7 +24,7 @@
             <a class="nav-link" routerLink="/home" routerLinkOption="active">5 Days</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"routerLink ="/list" routerLinkOption="active">7 Days</a>
+            <a class="nav-link"routerLink ="/list" routerLinkOption="active">8 Days</a>
           </li>
           
         </ul>

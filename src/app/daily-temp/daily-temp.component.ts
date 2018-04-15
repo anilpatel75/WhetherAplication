@@ -1,12 +1,14 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit,Input } from '@angular/core';
 import { Server } from '../share/server.component';
+import { AnilAnimation } from '../animation/anilAnimation';
 
 
 @Component({
   selector: 'app-daily-temp',
   templateUrl: './daily-temp.component.html',
-  styleUrls: ['./daily-temp.component.css']
+  styleUrls: ['./daily-temp.component.css'],
+  animations : [AnilAnimation]
 })
 export class DailyTempComponent implements OnInit{
    data:any =[];

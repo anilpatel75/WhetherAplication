@@ -4,15 +4,13 @@ import { NgModule, Component } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
-
-
-
 import { AppComponent } from './app.component';
 import { ListOfWetherComponent } from './list-of-wether/list-of-wether.component';
 import { DailyTempComponent } from './daily-temp/daily-temp.component';
 import { HomeComponent } from './home/home.component';
 import { AutoComponent } from './auto/auto.component';
 import { SingleDayComponent } from './single-day/single-day.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
  const appRoute: Routes =[
@@ -38,6 +36,7 @@ import { SingleDayComponent } from './single-day/single-day.component';
     BrowserModule,
     HttpModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoute)
   ],
   providers: [Server],

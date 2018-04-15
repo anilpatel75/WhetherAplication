@@ -8,37 +8,37 @@
   </div>
   <div class="col-md-6 col-offset-md-3">
     
-          <div class="main">
+          <div class="main" [@anilAnimation]>
           
                 <a>
-                    <h2>{{singleData.time * 1000 | date: 'MMM d' }}</h2>
-                    <h2>High:{{singleData.apparentTemperatureHigh}}</h2>
-                     <h2>Min:{{singleData.temperatureMin}}</h2>
+                    <h2>{{singleData?.time * 1000 | date: 'MMM d' }}</h2>
+                    <h2>High:{{singleData?.apparentTemperatureHigh}}</h2>
+                     <h2>Min:{{singleData?.temperatureMin}}</h2>
                      <!-- <i  style="text-align:center"[class]="weatherIcon(item.icon)"></i> -->
                      <hr>
                           <div class="uv">
                                  <div class="uvIndex1">uvIndex:</div>
-                                <div class="uvIndex2">{{singleData.uvIndex}}</div>
+                                <div class="uvIndex2">{{singleData?.uvIndex}}</div>
                            </div>
 
                           <div class="speed">
                                 <div class="speed1">speed:</div>
-                                <div class="speed2">{{singleData.windSpeed}}</div>
+                                <div class="speed2">{{singleData?.windSpeed}}</div>
                          </div> 
                       
                           <div class="visibility">
                                 <div class="visibility1">visibility:</div>
-                                <div class="visibility2">{{singleData.visibility}}</div>
+                                <div class="visibility2">{{singleData?.visibility}}</div>
                            </div> 
 
                            <div class="visibility">
                               <div class="visibility3">moonPhase:</div>
-                              <div class="visibility4">{{singleData.moonPhase}}</div>
+                              <div class="visibility4">{{singleData?.moonPhase}}</div>
                          </div> 
 
                          <div class="visibility">
                             <div class="visibility5">CloudCover:</div>
-                            <div class="visibility6">{{singleData.cloudCover}}</div>
+                            <div class="visibility6">{{singleData?.cloudCover}}</div>
                        </div> 
 
                      

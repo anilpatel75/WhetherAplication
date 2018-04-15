@@ -1,3 +1,4 @@
+import { AnilAnimation } from './../animation/anilAnimation';
 import { Server } from './../share/server.component';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-single-day',
   templateUrl: './single-day.component.html',
-  styleUrls: ['./single-day.component.css']
+  styleUrls: ['./single-day.component.css'],
+  animations:[AnilAnimation]
 })
 export class SingleDayComponent implements OnInit {
  id:number;
- singleData=[];
+ singleData:object=[];
   constructor(private route:ActivatedRoute, private server:Server) { }
 
   ngOnInit() {

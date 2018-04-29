@@ -28,7 +28,7 @@ export class DailyTempComponent implements OnInit{
   {
     for(let i=0; i<24;i++)
     {  
-        this.newData.push(this.data[i]);
+     this.newData.push(this.data[i]);
     }
   }
   

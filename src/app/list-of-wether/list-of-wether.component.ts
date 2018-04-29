@@ -9,14 +9,10 @@ import {
   transition,keyframes
 } from '@angular/animations';
 import { AnilAnimation } from '../animation/anilAnimation';
-
-
-
 @Component({
   selector: 'app-list-of-wether',
   templateUrl: './list-of-wether.component.html',
   styleUrls: ['./list-of-wether.component.css'],
- 
   animations: [
     trigger('heroState', [
       state('inactive', style({transform: 'translateX(0) scale(1)'})),
@@ -30,9 +26,7 @@ import { AnilAnimation } from '../animation/anilAnimation';
 export class ListOfWetherComponent implements OnInit,OnChanges{
 dailyData:any =[];
 state:string = 'inactive';
-
-
-   constructor(private service:Server ,
+  constructor(private service:Server ,
    private router:Router,
     private route:ActivatedRoute) { }
 ngOnInit() {
@@ -46,17 +40,17 @@ ngOnChanges()
  
 }
    weatherIcon(icon) {
-   switch (icon) {
+    switch (icon) {
     case 'partly-cloudy-day':
-      return 'wi wi-day-cloudy'
+      return 'assets/png/001-sky-1.png'
     case 'clear-day':
-      return 'wi wi-day-sunny'
+      return 'assets/png/003-weather.png'
     case 'partly-cloudy-night':
-      return 'wi wi-night-partly-cloudy' 
+      return 'assets/png/001-sky-1.png'
       case 'rain':
-      return 'wi wi-day-rain'
+      return 'assets/png/004-rain.png'
     default:
-      return `wi wi-day-sunny`
+      return 'assets/png/001-sky-1.png'
   }
 }
 onMouseOver(index)
@@ -67,7 +61,6 @@ onMouseOver(index)
 onMouseleave(index)
 {
   this.state === 'inactive' ? this.state ='active' : this.state = 'inactive';
-  
 }
 ontoggle()
 {

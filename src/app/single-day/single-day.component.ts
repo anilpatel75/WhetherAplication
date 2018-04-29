@@ -12,20 +12,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleDayComponent implements OnInit {
  id:number;
- singleData:object=[];
+ singleData;
   constructor(private route:ActivatedRoute, private server:Server) { }
 
   ngOnInit() {
     this.route.params.subscribe((param)=>
   {
      this.id = +param['id'];
+     this.server.dataBase.subscribe((singledata)=>
+    {
+     this.singleData = singledata[this.id];
     
-  })
-  this.server.dataBase.subscribe((singleData)=>
-{
-     this.singleData = singleData[this.id];
-     console.log(this.singleData);
+})
 })
   }
+  weatherIcon(icon) {
+    switch (icon) {
+    case 'partly-cloudy-day':
+      return 'assets/png/001-sky-1.png'
+    case 'clear-day':
+      return 'assets/png/003-weather.png'
+    case 'partly-cloudy-night':
+      return 'assets/png/001-sky-1.png'
+      case 'rain':
+      return 'assets/png/004-rain.png'
+    default:
+      return 'assets/png/001-sky-1.png'
+  }
+}
 
 }

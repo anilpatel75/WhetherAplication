@@ -19,10 +19,7 @@ import { trigger,state, style, transition,animate } from '@angular/animations';
     state('active',   style({transform: 'translateX(0) scale(1.02)'})),
     transition('inactive => active', animate('100ms ease-in')),
     transition('active => inactive', animate('100ms ease-out')),
-    //  transition('active <=> inactive',
-    //   [animate('500ms ease-out',
-    //   style({transform:'scale(1.0)'}))]
-    // )
+   
     ]
 )]
 })
@@ -30,15 +27,13 @@ export class AppComponent  {
  state:string = 'inactive';
   lat;
   long;
+  dataComing:boolean =false;
   constructor(private server:Server, private router:Router) { }
-
   ngOnInit() {
-    this.watchId;
+ 
   }
-  
- watchId = navigator.geolocation.watchPosition(function(position)
-   {console.log(position.coords.latitude) ;
-   console.log(position.coords.longitude)});  
+    
+ 
 
   onSearch(name){
     this.server.getresult(name).subscribe(
@@ -46,26 +41,26 @@ export class AppComponent  {
                     this.lat = empDataResponse["results"][0]["geometry"]["location"].lat;
                     this.long = empDataResponse["results"][0]["geometry"]["location"].lng;
                  console.log(this.lat)
-    this.server.getresultApi(this.lat,this.long).subscribe((newData)=>
-  {         this.server.hourlyData.next(newData["hourly"]["data"]);
-           this.server.dataBase.next(newData["daily"]["data"])
-         
-  });
-      
-          
+           this.server.getresultApi(this.lat,this.long).subscribe(
+             (newData)=>{ 
+               if(newData !== null) 
+               {
+                 this.router.navigate(['list'])
+                 this.server.hourlyData.next(newData["hourly"]["data"]);
+                 this.server.dataBase.next(newData["daily"]["data"])
+               }
+               else{
+                this.router.navigate([''])
+               }
             });
-    
-        
-             
-          
-
-           }
-           onMouseOver(index)
+         });
+        }
+           onMouseOver()
            {
              this.state === 'active' ? this.state ='inactive' :this.state = 'active';
             
            }
-           onMouseleave(index)
+           onMouseleave()
            {
              this.state === 'inactive' ? this.state ='active' : this.state = 'inactive';
              

@@ -1,4 +1,10 @@
-import { AnimationTriggerMetadata,animate, state, style, transition, trigger, keyframes } from '@angular/animations';
+import { AnimationTriggerMetadata,
+  animate, 
+  state, 
+  style, 
+  transition,
+  trigger,
+  keyframes} from '@angular/animations';
 export const AnilAnimation = 
 trigger('anilAnimation', [
     transition('void => *',[ animate(1000, keyframes([

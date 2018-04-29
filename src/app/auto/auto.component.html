@@ -1,39 +1,28 @@
 <div class="row" *ngIf="todayData">
-  
-  <div class="col-md-3 col-offset-md-4">
-   
-  </div>
-  <div class="col-md-6 col-offset-md-3">
-    
-          <div class="main" [@anilAnimation]>
-                        
-              <a>
-                    <h2>{{todayData.time * 1000 | date: 'MMM d' }}</h2>
-                    <h2>High:{{todayData.apparentTemperatureHigh}}</h2>
-                     <h2>Min:{{todayData.temperatureMin}}</h2>
-                     <!-- <i  style="text-align:center"[class]="weatherIcon(item.icon)"></i> -->
-                     <hr>
-                          <div class="uv">
-                                 <div class="uvIndex1">uvIndex:</div>
-                                <div class="uvIndex2">{{todayData.uvIndex}}</div>
-                           </div>
+<div class="col-md-3 col-offset-md-4"></div>
+<div class="col-md-6 col-offset-md-3">
+ <div class="main" [@anilAnimation]>
+            <a>
+            <h2>{{todayData.time * 1000 | date: 'MMM d' }}</h2>
+            <h2>High:{{todayData.apparentTemperatureHigh}}</h2>
+            <h2>Min:{{todayData.temperatureMin}}</h2>
+            <img class="whether"[src]="weatherIcon(todayData.icon)">
+            <hr>
+            <div class="uv">
+                  <div class="uvIndex1">uvIndex:</div>
+                  <div class="uvIndex2">{{todayData.uvIndex}}</div>
+            </div>
 
-                          <div class="speed">
-                                <div class="speed1">speed:</div>
-                                <div class="speed2">{{todayData.windSpeed}}</div>
-                         </div> 
-                      
-                          <div class="visibility">
-                                <div class="visibility1">visibility:</div>
-                                <div class="visibility2">{{todayData.visibility}}</div>
-                           </div> 
-
-                     
-              </a>
+            <div class="speed">
+                  <div class="speed1">speed:</div>
+                   <div class="speed2">{{todayData.windSpeed}}</div>
+            </div> 
+            <div class="visibility">
+                  <div class="visibility1">visibility:</div>
+                  <div class="visibility2">{{todayData.visibility}}</div>
+            </div> 
+            </a>
   </div>
-  
-    
-    </div>
-      
-    </div>
+ </div>
+ </div>
  

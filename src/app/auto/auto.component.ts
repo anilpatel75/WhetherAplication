@@ -20,4 +20,18 @@ export class AutoComponent implements OnInit {
        
   })
   }
+  weatherIcon(icon) {
+    switch (icon) {
+    case 'partly-cloudy-day':
+      return 'assets/png/001-sky-1.png'
+    case 'clear-day':
+      return 'assets/png/003-weather.png'
+    case 'partly-cloudy-night':
+      return 'assets/png/001-sky-1.png'
+      case 'rain':
+      return 'assets/png/004-rain.png'
+    default:
+      return 'assets/png/001-sky-1.png'
+  }
+}
 }
